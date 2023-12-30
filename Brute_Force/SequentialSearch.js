@@ -1,14 +1,14 @@
-function linearSort(arr, key) {
-    arr.sort((a, b) => a - b);
-    isFound = false;
-    for (const [index, element] of arr.entries()) {
+//Optimized Linear Search
+function SequentialSearch(arr, key) {
 
+    let isFound = false;
+    for (const [index, element] of arr.entries()) {
         if (element > key) {
             return -1;
         }
 
         if (element == key) {
-            isFound = true
+            isFound = true;
             return index
         }
     }
@@ -18,5 +18,7 @@ function linearSort(arr, key) {
     }
 }
 
-let arr = [3, 5, 10, 28, 100]
-console.log("Value ", linearSort(arr, 5));
+let arr = [1, 5, 323, 2, 0, 2];
+arr.sort((a, b) => a - b)
+console.log(arr)
+console.log(SequentialSearch(arr, 22));
